@@ -1,10 +1,10 @@
 <?php
 //connection to mysql database
 
-$host = "sql100.infinityfree.com";  //database host
-$username = "if0_39543951";  //database user
-$password = "nHquHLJU41m6PHD";    //database password
-$database = "if0_39543951_cashapp2";  //database name
+$host = "sql210.infinityfree.com";  //database host
+$username = "if0_40199478";  //database username
+$password = "uR8pb2DxIhn";    //database password
+$database = "if0_40199478_webcl";  //database name
 
 $con = mysqli_connect("$host","$username","$password","$database");
 
@@ -12,4 +12,3 @@ if(!$con)
 {
     echo 'error in connection';
 }
-
