@@ -2,7 +2,7 @@
 //connection to mysql database
 
 $host = "sql210.infinityfree.com";  //database host
-$username = "if0_40199478";  //database user
+$username = "if0_40199478";  //database username
 $password = "uR8pb2DxIhn";    //database password
 $database = "if0_40199478_webcl";  //database name
 
