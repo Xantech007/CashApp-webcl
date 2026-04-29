@@ -46,10 +46,37 @@
                             </li>
                         </ul>
 
-                        <!-- Language Translator -->
+                        <!-- Language Translator with Hardcoded CSS -->
                         <div class="d-flex align-items-center ms-3">
                             <?php include('includes/translate.php'); ?>
                         </div>
+
+                        <!-- Hardcoded CSS for Google Translate -->
+                        <style>
+                            #google_translate_element {
+                                display: inline-block;
+                                margin-top: 6px;
+                            }
+                            .goog-te-gadget-simple {
+                                background: #ffffff !important;
+                                border: 1px solid #ccc !important;
+                                border-radius: 4px !important;
+                                padding: 5px 10px !important;
+                                font-size: 14px !important;
+                                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                            }
+                            .goog-te-gadget-icon {
+                                display: none !important;
+                            }
+                            .goog-te-gadget-simple .goog-te-menu-value {
+                                color: #333 !important;
+                                font-weight: 500;
+                            }
+                            /* Hide the Google logo */
+                            .goog-te-gadget img {
+                                display: none !important;
+                            }
+                        </style>
 
                         <!-- Login / Dashboard Button -->
                         <?php
