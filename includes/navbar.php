@@ -46,15 +46,14 @@
                             </li>
                         </ul>
 
-                                                <!-- Language Translator + CSS Fix -->
-                        <!-- Language Translator with Orange Theme -->
+                                                <!-- Language Translator with Orange Theme -->
                         <div class="d-flex align-items-center ms-3">
                             <?php include('includes/translate.php'); ?>
                         </div>
 
-                        <!-- Hardcoded CSS: Orange Theme + Strong Top Bar Fix -->
+                        <!-- Hardcoded CSS: Orange Theme + Safe Top Bar Fix -->
                         <style>
-                            /* Orange Theme for Google Translate */
+                            /* Orange Theme for the translate button */
                             #google_translate_element {
                                 margin-top: 6px;
                             }
@@ -65,7 +64,7 @@
                                 padding: 6px 12px !important;
                                 font-size: 14px !important;
                                 color: white !important;
-                                box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+                                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
                             }
                             .goog-te-gadget-simple .goog-te-menu-value {
                                 color: white !important;
@@ -76,26 +75,22 @@
                                 display: none !important;
                             }
 
-                            /* === STRONGER FIX FOR GOOGLE TOP BAR === */
+                            /* Safe fix for Google top bar - only target the banner */
                             .goog-te-banner-frame.skiptranslate,
-                            .goog-te-banner-frame,
-                            iframe.goog-te-banner-frame,
-                            body > .skiptranslate,
-                            .skiptranslate {
+                            iframe.goog-te-banner-frame {
                                 display: none !important;
                                 visibility: hidden !important;
                                 height: 0 !important;
-                                width: 0 !important;
-                                position: absolute !important;
-                                top: -9999px !important;
                             }
 
-                            /* Reset any margin/padding Google adds to body */
+                            /* Reset body position */
                             body {
                                 top: 0 !important;
                                 margin-top: 0 !important;
                             }
                         </style>
+
+                        
                         <!-- Login / Dashboard Button -->
                         <?php
                         if(isset($_SESSION['admin'])) { ?>
