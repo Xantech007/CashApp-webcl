@@ -7,8 +7,7 @@
         </a>
     </div><!-- End Logo -->
 
-    <div class="search-bar">
-    </div><!-- End Search Bar -->
+    <div class="search-bar"></div><!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
@@ -18,8 +17,9 @@
                 <?php include('../includes/translate.php'); ?>
             </li>
 
-            <!-- Hardcoded CSS Fix for Google Translate -->
+            <!-- Hardcoded CSS for Google Translate + Profile Fix -->
             <style>
+                /* Google Translate Styling */
                 #google_translate_element {
                     margin-top: 8px;
                 }
@@ -29,25 +29,36 @@
                     border-radius: 6px !important;
                     padding: 6px 12px !important;
                     font-size: 14px !important;
-                    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
                 }
-                .goog-te-gadget-icon {
-                    display: none !important;
-                }
-                .goog-te-gadget img {
+                .goog-te-gadget-icon, .goog-te-gadget img {
                     display: none !important;
                 }
 
-                /* Hide the annoying Google Translate top bar */
+                /* Hide Google Translate top bar */
                 .goog-te-banner-frame.skiptranslate,
                 iframe.goog-te-banner-frame {
                     display: none !important;
-                    visibility: hidden !important;
                     height: 0 !important;
                 }
-
                 body {
                     top: 0 !important;
+                }
+
+                /* Fixed Profile Picture Size & Alignment */
+                .header-nav .nav-profile img {
+                    width: 32px !important;
+                    height: 32px !important;
+                    object-fit: cover;
+                    border-radius: 50% !important;
+                    margin-right: 8px;
+                }
+
+                .nav-profile {
+                    padding: 8px 0 !important;
+                }
+
+                .dropdown-toggle::after {
+                    margin-left: 6px;
                 }
             </style>
 
