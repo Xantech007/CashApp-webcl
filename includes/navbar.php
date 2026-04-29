@@ -75,21 +75,7 @@
                             }
                         </style>
 
-                        <!-- Login / Dashboard Button -->
-                        <?php
-                        if(isset($_SESSION['admin'])) { ?>
-                            <a href="admin/signin" class="base-btn2 ms-3" 
-                               style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Admin</a>
-                        <?php } 
-                        else if(isset($_SESSION['auth'])) { ?>
-                            <a href="signin" class="base-btn2 ms-3" 
-                               style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Dashboard</a>
-                        <?php } 
-                        else { ?>
-                            <a href="signin" class="base-btn2 ms-3" 
-                               style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Login</a>
-                        <?php } ?>
-
+                   
                         <!-- Login / Dashboard Button -->
                         <?php
                         if(isset($_SESSION['admin'])) { ?>
