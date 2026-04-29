@@ -15,10 +15,10 @@
 
             <!-- Language Translator -->
             <li class="nav-item pe-3">
-                <?php include('inc/translate.php'); ?>   <!-- Change path if needed -->
+                <?php include('../includes/translate.php'); ?>
             </li>
 
-            <!-- Hardcoded CSS to fix Google Translate overlapping -->
+            <!-- Hardcoded CSS Fix for Google Translate -->
             <style>
                 #google_translate_element {
                     margin-top: 8px;
@@ -26,16 +26,19 @@
                 .goog-te-gadget-simple {
                     background: #ffffff !important;
                     border: 1px solid #ced4da !important;
-                    border-radius: 4px !important;
-                    padding: 6px 10px !important;
+                    border-radius: 6px !important;
+                    padding: 6px 12px !important;
                     font-size: 14px !important;
+                    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
                 }
-                .goog-te-gadget-icon,
+                .goog-te-gadget-icon {
+                    display: none !important;
+                }
                 .goog-te-gadget img {
                     display: none !important;
                 }
 
-                /* Hide the annoying Google Translate top banner */
+                /* Hide the annoying Google Translate top bar */
                 .goog-te-banner-frame.skiptranslate,
                 iframe.goog-te-banner-frame {
                     display: none !important;
