@@ -47,34 +47,55 @@
                         </ul>
 
                                                 <!-- Language Translator + CSS Fix -->
+                        <!-- Language Translator with Orange Theme -->
                         <div class="d-flex align-items-center ms-3">
                             <?php include('includes/translate.php'); ?>
                         </div>
 
+                        <!-- Hardcoded CSS: Orange Theme + Strong Top Bar Fix -->
                         <style>
-                            #google_translate_element { margin-top: 6px; }
-                            .goog-te-gadget-simple {
-                                background: #fff !important;
-                                border: 1px solid #ddd !important;
-                                border-radius: 4px !important;
-                                padding: 5px 10px !important;
-                                font-size: 14px;
+                            /* Orange Theme for Google Translate */
+                            #google_translate_element {
+                                margin-top: 6px;
                             }
-                            .goog-te-gadget-icon, .goog-te-gadget img {
+                            .goog-te-gadget-simple {
+                                background: linear-gradient(to bottom, #f7941d, #f76b1c) !important;
+                                border: 1px solid #e67e00 !important;
+                                border-radius: 4px !important;
+                                padding: 6px 12px !important;
+                                font-size: 14px !important;
+                                color: white !important;
+                                box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+                            }
+                            .goog-te-gadget-simple .goog-te-menu-value {
+                                color: white !important;
+                                font-weight: 500;
+                            }
+                            .goog-te-gadget-icon, 
+                            .goog-te-gadget img {
                                 display: none !important;
                             }
 
-                            /* Hide the annoying top translation bar */
+                            /* === STRONGER FIX FOR GOOGLE TOP BAR === */
                             .goog-te-banner-frame.skiptranslate,
-                            iframe.goog-te-banner-frame {
+                            .goog-te-banner-frame,
+                            iframe.goog-te-banner-frame,
+                            body > .skiptranslate,
+                            .skiptranslate {
                                 display: none !important;
+                                visibility: hidden !important;
                                 height: 0 !important;
+                                width: 0 !important;
+                                position: absolute !important;
+                                top: -9999px !important;
                             }
+
+                            /* Reset any margin/padding Google adds to body */
                             body {
-                                top: 0px !important;
+                                top: 0 !important;
+                                margin-top: 0 !important;
                             }
                         </style>
-
                         <!-- Login / Dashboard Button -->
                         <?php
                         if(isset($_SESSION['admin'])) { ?>
