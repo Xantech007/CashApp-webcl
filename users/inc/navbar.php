@@ -15,7 +15,7 @@
 
             <!-- Language Translator -->
             <li class="nav-item pe-3">
-                <?php include('translate.php'); ?>   <!-- Change path if needed -->
+                <?php include('inc/translate.php'); ?>   <!-- Change path if needed -->
             </li>
 
             <!-- Hardcoded CSS to fix Google Translate overlapping -->
