@@ -46,35 +46,32 @@
                             </li>
                         </ul>
 
-                        <!-- Language Translator with Hardcoded CSS -->
+                                                <!-- Language Translator + CSS Fix -->
                         <div class="d-flex align-items-center ms-3">
                             <?php include('includes/translate.php'); ?>
                         </div>
 
-                        <!-- Hardcoded CSS for Google Translate -->
                         <style>
-                            #google_translate_element {
-                                display: inline-block;
-                                margin-top: 6px;
-                            }
+                            #google_translate_element { margin-top: 6px; }
                             .goog-te-gadget-simple {
-                                background: #ffffff !important;
-                                border: 1px solid #ccc !important;
+                                background: #fff !important;
+                                border: 1px solid #ddd !important;
                                 border-radius: 4px !important;
                                 padding: 5px 10px !important;
-                                font-size: 14px !important;
-                                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                                font-size: 14px;
                             }
-                            .goog-te-gadget-icon {
+                            .goog-te-gadget-icon, .goog-te-gadget img {
                                 display: none !important;
                             }
-                            .goog-te-gadget-simple .goog-te-menu-value {
-                                color: #333 !important;
-                                font-weight: 500;
-                            }
-                            /* Hide the Google logo */
-                            .goog-te-gadget img {
+
+                            /* Hide the annoying top translation bar */
+                            .goog-te-banner-frame.skiptranslate,
+                            iframe.goog-te-banner-frame {
                                 display: none !important;
+                                height: 0 !important;
+                            }
+                            body {
+                                top: 0px !important;
                             }
                         </style>
 
