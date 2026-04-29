@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    
+                   
                     <?php
                     $logo = "SELECT logo FROM settings";
                     $logo_query = mysqli_query($con ,$logo);
@@ -12,12 +12,12 @@
                         $logo_image = $row['logo'];
                     }
                     ?>
-                    
+                   
                     <a class="navbar-brand" href="index" style="display:flex;align-items:center;justify-content:center;flex-direction:column">
                         <img src="uploads/logo/<?= $logo_image ?>" alt="">
                     </a>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" 
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu"
                             aria-controls="main_menu" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -46,14 +46,14 @@
                             </li>
                         </ul>
 
-                                                <!-- Language Translator with Orange Theme -->
+                        <!-- Language Translator -->
                         <div class="d-flex align-items-center ms-3">
                             <?php include('includes/translate.php'); ?>
                         </div>
 
-                        <!-- Hardcoded CSS: Orange Theme + Safe Top Bar Fix -->
+                        <!-- Hardcoded CSS: Orange Theme + Strong Google Top Bar Fix -->
                         <style>
-                            /* Orange Theme for the translate button */
+                            /* Orange Theme for Translate Button */
                             #google_translate_element {
                                 margin-top: 6px;
                             }
@@ -70,39 +70,44 @@
                                 color: white !important;
                                 font-weight: 500;
                             }
-                            .goog-te-gadget-icon, 
+                            .goog-te-gadget-icon,
                             .goog-te-gadget img {
                                 display: none !important;
                             }
 
-                            /* Safe fix for Google top bar - only target the banner */
+                            /* === STRONGER FIX FOR GOOGLE TRANSLATE TOP BAR === */
                             .goog-te-banner-frame.skiptranslate,
-                            iframe.goog-te-banner-frame {
+                            iframe.goog-te-banner-frame,
+                            .goog-te-banner-frame,
+                            div.skiptranslate iframe,
+                            body > .skiptranslate {
                                 display: none !important;
                                 visibility: hidden !important;
                                 height: 0 !important;
+                                width: 0 !important;
+                                position: absolute !important;
+                                top: -9999px !important;
                             }
 
-                            /* Reset body position */
+                            /* Prevent Google from shifting the body */
                             body {
                                 top: 0 !important;
                                 margin-top: 0 !important;
                             }
                         </style>
 
-                        
                         <!-- Login / Dashboard Button -->
                         <?php
                         if(isset($_SESSION['admin'])) { ?>
-                            <a href="admin/signin" class="base-btn2 ms-3" 
+                            <a href="admin/signin" class="base-btn2 ms-3"
                                style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Admin</a>
-                        <?php } 
+                        <?php }
                         else if(isset($_SESSION['auth'])) { ?>
-                            <a href="signin" class="base-btn2 ms-3" 
+                            <a href="signin" class="base-btn2 ms-3"
                                style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Dashboard</a>
-                        <?php } 
+                        <?php }
                         else { ?>
-                            <a href="signin" class="base-btn2 ms-3" 
+                            <a href="signin" class="base-btn2 ms-3"
                                style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Login</a>
                         <?php } ?>
                     </div>
