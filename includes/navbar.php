@@ -46,58 +46,49 @@
                             </li>
                         </ul>
 
-                        <!-- Language Translator -->
+                                                <!-- Language Translator + CSS Fix -->
                         <div class="d-flex align-items-center ms-3">
                             <?php include('includes/translate.php'); ?>
                         </div>
 
-                        <!-- Hardcoded CSS: Orange Theme + Fixed Dropdown -->
                         <style>
-                            /* Orange Theme for the Translate Button */
-                            #google_translate_element {
-                                margin-top: 6px;
-                            }
+                            #google_translate_element { margin-top: 6px; }
                             .goog-te-gadget-simple {
-                                background: linear-gradient(to bottom, #f7941d, #f76b1c) !important;
-                                border: 1px solid #e67e00 !important;
+                                background: #fff !important;
+                                border: 1px solid #ddd !important;
                                 border-radius: 4px !important;
-                                padding: 6px 12px !important;
-                                font-size: 14px !important;
-                                color: white !important;
-                                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                                padding: 5px 10px !important;
+                                font-size: 14px;
                             }
-                            .goog-te-gadget-simple .goog-te-menu-value {
-                                color: white !important;
-                                font-weight: 500;
-                            }
-                            .goog-te-gadget-icon,
-                            .goog-te-gadget img {
+                            .goog-te-gadget-icon, .goog-te-gadget img {
                                 display: none !important;
                             }
 
-                            /* Hide only the top banner (safe version) */
+                            /* Hide the annoying top translation bar */
                             .goog-te-banner-frame.skiptranslate,
                             iframe.goog-te-banner-frame {
                                 display: none !important;
-                                visibility: hidden !important;
                                 height: 0 !important;
-                                width: 0 !important;
                             }
-
-                            /* Allow the language dropdown menu to show properly */
-                            .goog-te-menu-frame.skiptranslate,
-                            iframe.goog-te-menu-frame {
-                                display: block !important;
-                                visibility: visible !important;
-                                z-index: 999999 !important;
-                            }
-
-                            /* Reset body shift */
                             body {
-                                top: 0 !important;
-                                margin-top: 0 !important;
+                                top: 0px !important;
                             }
                         </style>
+
+                        <!-- Login / Dashboard Button -->
+                        <?php
+                        if(isset($_SESSION['admin'])) { ?>
+                            <a href="admin/signin" class="base-btn2 ms-3" 
+                               style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Admin</a>
+                        <?php } 
+                        else if(isset($_SESSION['auth'])) { ?>
+                            <a href="signin" class="base-btn2 ms-3" 
+                               style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Dashboard</a>
+                        <?php } 
+                        else { ?>
+                            <a href="signin" class="base-btn2 ms-3" 
+                               style="background: linear-gradient(to bottom, #f7941d, #f76b1c);">Login</a>
+                        <?php } ?>
 
                         <!-- Login / Dashboard Button -->
                         <?php
