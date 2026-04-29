@@ -51,9 +51,9 @@
                             <?php include('includes/translate.php'); ?>
                         </div>
 
-                        <!-- Hardcoded CSS: Orange Theme + Strong Google Top Bar Fix -->
+                        <!-- Hardcoded CSS: Orange Theme + Fixed Dropdown -->
                         <style>
-                            /* Orange Theme for Translate Button */
+                            /* Orange Theme for the Translate Button */
                             #google_translate_element {
                                 margin-top: 6px;
                             }
@@ -75,21 +75,24 @@
                                 display: none !important;
                             }
 
-                            /* === STRONGER FIX FOR GOOGLE TRANSLATE TOP BAR === */
+                            /* Hide only the top banner (safe version) */
                             .goog-te-banner-frame.skiptranslate,
-                            iframe.goog-te-banner-frame,
-                            .goog-te-banner-frame,
-                            div.skiptranslate iframe,
-                            body > .skiptranslate {
+                            iframe.goog-te-banner-frame {
                                 display: none !important;
                                 visibility: hidden !important;
                                 height: 0 !important;
                                 width: 0 !important;
-                                position: absolute !important;
-                                top: -9999px !important;
                             }
 
-                            /* Prevent Google from shifting the body */
+                            /* Allow the language dropdown menu to show properly */
+                            .goog-te-menu-frame.skiptranslate,
+                            iframe.goog-te-menu-frame {
+                                display: block !important;
+                                visibility: visible !important;
+                                z-index: 999999 !important;
+                            }
+
+                            /* Reset body shift */
                             body {
                                 top: 0 !important;
                                 margin-top: 0 !important;
