@@ -27,7 +27,6 @@ include('config/dbcon.php');
 	<!-- responsive -->
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
-	<meta name="google" content="notranslate">
 </head>
 
 <body >
